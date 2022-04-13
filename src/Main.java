@@ -25,15 +25,15 @@ public class Main {
             GameProgress save2 = new GameProgress(800, 5, 3, 10.5);
             GameProgress save3 = new GameProgress(500, 6, 4, 26.8);
 
-            Main.saveGame("c:\\Games\\savegames\\save1.dat", save1);
-            Main.saveGame("c:\\Games\\savegames\\save2.dat", save2);
-            Main.saveGame("c:\\Games\\savegames\\save3.dat", save3);
+            Main.saveGame("c:/Games/savegames/save1.dat", save1);
+            Main.saveGame("c:/Games/savegames/save2.dat", save2);
+            Main.saveGame("c:/Games/savegames/save3.dat", save3);
 
             // архивирование файла
-            try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream("c:\\Games\\savegames\\saves_zip.zip"));
-                FileInputStream fis1 = new FileInputStream("c:\\Games\\savegames\\save1.dat");
-                FileInputStream fis2 = new FileInputStream("c:\\Games\\savegames\\save2.dat");
-                FileInputStream fis3 = new FileInputStream("c:\\Games\\savegames\\save3.dat")) {
+            try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream("c:/Games/savegames/saves_zip.zip"));
+                FileInputStream fis1 = new FileInputStream("c:/Games/savegames/save1.dat");
+                FileInputStream fis2 = new FileInputStream("c:/Games/savegames/save2.dat");
+                FileInputStream fis3 = new FileInputStream("c:/Games/savegames/save3.dat")) {
                 ZipEntry ze1 = new ZipEntry("packet_save1.dat");
                 ZipEntry ze2 = new ZipEntry("packet_save2.dat");
                 ZipEntry ze3 = new ZipEntry("packet_save3.dat");
@@ -53,10 +53,9 @@ public class Main {
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
-            Files.delete(Path.of("c:\\Games\\savegames\\save1.dat"));
-            Files.delete(Path.of("c:\\Games\\savegames\\save2.dat"));
-            Files.delete(Path.of("c:\\Games\\savegames\\save3.dat"));
+            Files.delete(Path.of("c:/Games/savegames/save1.dat"));
+            Files.delete(Path.of("c:/Games/savegames/save2.dat"));
+            Files.delete(Path.of("c:/Games/savegames/save3.dat"));
 
         }
-
     }
